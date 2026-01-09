@@ -2,72 +2,86 @@
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <title>ALEX HARY — ART · DESIGN · CODE</title>
-        <meta name="description" content="Alex Hary — parametric art, architectural design and creative coding. Barcelona studio."/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-        <meta name="HandheldFriendly" content="true">
-        <meta name="MobileOptimized" content="width">
-        <link rel="preload" as="image" href="assets/art-1.jpg"/>
-        <link rel="stylesheet" href="style.css"/>
+        <meta content="Alex Hary — parametric art, architectural design and creative coding. Barcelona studio." name="description"/>
+        <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" name="viewport"/>
+        <meta content="true" name="HandheldFriendly"/>
+        <meta content="width" name="MobileOptimized"/>
+        <link as="image" href="assets/art-1.jpg" rel="preload"/>
+        <link href="style.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bellota+Text&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Urbanist&display=swap">
     </head>
     <body>
-        <header class="topbar" role="navigation" aria-label="Primary">
-            <div class="brand">ALEX&nbsp;HARY</div>
-            <nav class="nav"><a href="#art" class="nav__link is-active" data-index="0">ART</a><a href="#design" class="nav__link" data-index="1">DESIGN</a><a href="#code" class="nav__link" data-index="2">CODE</a><a href="#contact" class="nav__link" data-index="3">CONTACT</a>
+        <header aria-label="Primary" class="topbar" role="navigation">
+            <div class="brand">ALEX HARY</div>
+            <nav class="nav"><a class="nav__link is-active" data-index="0" href="#art">ART</a><a class="nav__link" data-index="1" href="#design">DESIGN</a><a class="nav__link" data-index="2" href="#code">CODE</a><a class="nav__link" data-index="3" href="#contact">CONTACT</a>
             </nav>
-            <div class="lang"><a href="#" class="lang__link is-active" data-lang="es">ES</a><span>·</span><a href="#" class="lang__link" data-lang="en">EN</a>
+            <div class="lang"><a class="lang__link is-active" data-lang="es" href="#">ES</a><span>·</span><a class="lang__link" data-lang="en" href="#">EN</a>
             </div>
         </header>
-        <main id="viewport" class="viewport" tabindex="-1">
-            <div id="slider" class="slider" aria-live="polite" aria-roledescription="carousel">
+        <main class="viewport" id="viewport" tabindex="-1">
+            <div aria-live="polite" aria-roledescription="carousel" class="slider" id="slider">
                 <!-- SECTION 1: ART -->
-                <section class="panel" id="art" aria-label="Art section">
+                <section aria-label="Art section" class="panel" id="art">
                     <div class="bg">
                         <div class="bg__slides">
                             <div class="bg__slide">
-                                <img src="assets/art-1.jpg" alt=""/>
+                                <img alt="" src="assets/art-5.jpg"/>
                             </div>
                             <div class="bg__slide">
-                                <img src="assets/art-2.jpg" alt=""/>
+                                <img alt="" src="assets/art-2.jpg"/>
                             </div>
                             <div class="bg__slide">
-                                <img src="assets/art-3.jpg" alt=""/>
+                                <img alt="" src="assets/art-3.jpg"/>
                             </div>
                         </div>
                         <div class="bg__tint"></div>
                     </div>
                     <div class="content">
-                        <h1>ART</h1>
-                        <p>Site-specific objects, ceramics and light pieces. Algorithms of matter transformed into physical form.</p>
+                        <h1>Art &amp; Decor</h1>
+                        <p>Art and decor objects, sculpture, ceramics and light pieces for interiors. <br>
+Unique pieces and small series developed for a specific spaces. <br>
+Algorithms of matter transformed into physical form.</p>
+                        <div class="fs">
+                            <div class="fs__label">Site-specific pieces for interiors</div>
+                            <div class="fs__row fs__label">
+                                <div class="fs__chips">
+                                    <a class="chip" data-id="signature" data-section="art" href="#art/signature">Process</a><a class="chip" data-id="materials" data-section="art" href="#art/materials">Materials</a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="projects">
                             <article class="project">
-                                <h2>Project 1</h2>
-                                <div class="grid"><a class="tile" href="#art/p1" data-section="art" data-id="p1">1</a><a class="tile" href="#art/p2" data-section="art" data-id="p2">2</a><a class="tile" href="#art/p3" data-section="art" data-id="p3">3</a><a class="tile" href="#art/p4" data-section="art" data-id="p4">4</a>
+                                <div class="fs__label">PROJECTS</div>
+                                <div class="grid"><a class="tile" data-id="p1" data-section="art" href="#art/p1">Sculpture</a><a class="tile" data-id="p2" data-section="art" href="#art/p2">Ceramics</a><a class="tile" data-id="p3" data-section="art" href="#art/p3">3D Prints</a><a class="tile" data-id="p4" data-section="art" href="#art/p4">Ligdt</a><a class="tile" data-id="p5" data-section="art" href="#art/p1">5</a><a class="tile" data-id="p6" data-section="art" href="#art/p3">3</a><a class="tile" data-id="p7" data-section="art" href="#art/p4">4</a><a class="tile" data-id="p8" data-section="art" href="#art/p4">4</a>
                                 </div>
                                 <p class="desc">Stoneware, CNC moulds, hand-finished glazes.</p>
                             </article>
                             <article class="project">
-                                <h2>Project 2a</h2>
-                                <div class="grid"><a class="tile" href="#art/p5" data-section="art" data-id="p5">5</a><a class="tile" href="#art/p6" data-section="art" data-id="p6">6</a><a class="tile" href="#art/p7" data-section="art" data-id="p7">7</a><a class="tile" href="#art/p8" data-section="art" data-id="p8">8</a>
-                                </div>
-                                <p class="desc">Light sculpture series, aluminum & diffusion fabrics.</p>
-                            </article>
+</article>
                         </div>
                     </div>
                 </section>
                 <!-- SECTION 2: DESIGN -->
-                <section class="panel" id="design" aria-label="Design section">
+                <section aria-label="Design section" class="panel" id="design">
                     <div class="bg">
                         <div class="bg__slides">
                             <div class="bg__slide">
-                                <img src="assets/design-1.jpg" alt=""/>
+                                <img alt="" src="assets/design-1.jpg"/>
                             </div>
                             <div class="bg__slide">
-                                <img src="assets/design-2.jpg" alt=""/>
+                                <img alt="" src="assets/design-2.jpg"/>
                             </div>
                             <div class="bg__slide">
-                                <img src="assets/design-3.jpg" alt=""/>
+                                <img alt="" src="assets/design-3.jpg"/>
                             </div>
                         </div>
                         <div class="bg__tint"></div>
@@ -78,13 +92,13 @@
                         <div class="projects">
                             <article class="project">
                                 <h2>Project 1</h2>
-                                <div class="grid"><a class="tile" href="#design/p1" data-section="design" data-id="p1">1</a><a class="tile" href="#design/p2" data-section="design" data-id="p2">2</a><a class="tile" href="#design/p3" data-section="design" data-id="p3">3</a><a class="tile" href="#design/p4" data-section="design" data-id="p4">4</a>
+                                <div class="grid"><a class="tile" data-id="p1" data-section="design" href="#design/p1">1</a><a class="tile" data-id="p2" data-section="design" href="#design/p2">2</a><a class="tile" data-id="p3" data-section="design" href="#design/p3">3</a><a class="tile" data-id="p4" data-section="design" href="#design/p4">4</a>
                                 </div>
                                 <p class="desc">Aluminum / HPL systems, CNC and powder coating.</p>
                             </article>
                             <article class="project">
                                 <h2>Project 2</h2>
-                                <div class="grid"><a class="tile" href="#design/p5" data-section="design" data-id="p5">5</a><a class="tile" href="#design/p6" data-section="design" data-id="p6">6</a><a class="tile" href="#design/p7" data-section="design" data-id="p7">7</a><a class="tile" href="#design/p8" data-section="design" data-id="p8">8</a>
+                                <div class="grid"><a class="tile" data-id="p5" data-section="design" href="#design/p5">5</a><a class="tile" data-id="p6" data-section="design" href="#design/p6">6</a><a class="tile" data-id="p7" data-section="design" href="#design/p7">7</a><a class="tile" data-id="p8" data-section="design" href="#design/p8">8</a>
                                 </div>
                                 <p class="desc">Custom prototypes and small series for interiors.</p>
                             </article>
@@ -92,30 +106,31 @@
                     </div>
                 </section>
                 <!-- SECTION 3: CODE (with particle canvas) -->
-                <section class="panel" id="code" aria-label="Code section">
+                <section aria-label="Code section" class="panel" id="code">
                     <div class="bg">
                         <!-- Particle background canvas (offline, enhanced) -->
-                        <canvas id="bgParticles" data-mode="trail" data-count="240" data-speed="0.55" data-fade="0.08" data-link-distance="120" data-line-alpha="0.30" data-pxratio="2" data-react="0.15"></canvas>
+                        <canvas data-count="240" data-fade="0.08" data-line-alpha="0.30" data-link-distance="120" data-mode="trail" data-pxratio="2" data-react="0.15" data-speed="0.55" id="bgParticles"></canvas>
                         <div class="bg__tint"></div>
                     </div>
                     <div class="content">
                         <h1>CODE</h1>
-                        <p>
-  Sistemas interactivos, projection/light mapping y visuales basados en datos.
-  Hecho con TouchDesigner, GLSL y Python.</p>
+                        <p>Sistemas interactivos, projection/light mapping y visuales basados en datos.
+  Hecho con TouchDesigner, GLSL y Python.&nbsp;</p>
+                        <p>Light sculpture series, aluminum &amp; diffusion fabrics.</p>
+                        <p></p>
                         <p>
   Experiencias web con enfoque en UI/UX: animaciones fluidas, 3D en navegador
-  y branding generativo. Rendimiento y accesibilidad incluidos.</p> 
+  y branding generativo. Rendimiento y accesibilidad incluidos.</p>
                         <div class="projects">
                             <article class="project">
                                 <h2>Project 1</h2>
-                                <div class="grid"><a class="tile" href="#code/p1" data-section="code" data-id="p1">1</a><a class="tile" href="#code/p2" data-section="code" data-id="p2">2</a><a class="tile" href="#code/p3" data-section="code" data-id="p3">3</a><a class="tile" href="#code/p4" data-section="code" data-id="p4">4</a>
+                                <div class="grid"><a class="tile" data-id="p1" data-section="code" href="#code/p1">1</a><a class="tile" data-id="p2" data-section="code" href="#code/p2">2</a><a class="tile" data-id="p3" data-section="code" href="#code/p3">3</a><a class="tile" data-id="p4" data-section="code" href="#code/p4">4</a>
                                 </div>
                                 <p class="desc">Real-time visuals and sensors for performance.</p>
                             </article>
                             <article class="project">
                                 <h2>Project 2</h2>
-                                <div class="grid"><a class="tile" href="#code/p5" data-section="code" data-id="p5">5</a><a class="tile" href="#code/p6" data-section="code" data-id="p6">6</a><a class="tile" href="#code/p7" data-section="code" data-id="p7">7</a><a class="tile" href="#code/p8" data-section="code" data-id="p8">8</a>
+                                <div class="grid"><a class="tile" data-id="p5" data-section="code" href="#code/p5">5</a><a class="tile" data-id="p6" data-section="code" href="#code/p6">6</a><a class="tile" data-id="p7" data-section="code" href="#code/p7">7</a><a class="tile" data-id="p8" data-section="code" href="#code/p8">8</a>
                                 </div>
                                 <p class="desc">Generative branding and responsive installations.</p>
                             </article>
@@ -123,17 +138,17 @@
                     </div>
                 </section>
                 <!-- SECTION 4: CONTACT -->
-                <section class="panel" id="contact" aria-label="Contact section">
+                <section aria-label="Contact section" class="panel" id="contact">
                     <div class="bg">
                         <div class="bg__slides">
                             <div class="bg__slide">
-                                <img src="assets/design-2.jpg" alt=""/>
+                                <img alt="" src="assets/design-2.jpg"/>
                             </div>
                             <div class="bg__slide">
-                                <img src="assets/design-1.jpg" alt=""/>
+                                <img alt="" src="assets/design-1.jpg"/>
                             </div>
                             <div class="bg__slide">
-                                <img src="assets/design-3.jpg" alt=""/>
+                                <img alt="" src="assets/design-3.jpg"/>
                             </div>
                         </div>
                         <div class="bg__tint"></div>
@@ -141,30 +156,63 @@
                     <div class="content">
                         <h1>Contact</h1>
                         <p>Tell me briefly about your project — materials, size, budget and timing. I’ll reply within 24–48h.</p>
-                        <form class="contact" action="https://formsubmit.co/youremail@example.com" method="POST">
-                            <input type="hidden" name="_subject" value="Website inquiry — Alex Hary">
+                        <form action="https://formsubmit.co/youremail@example.com" class="contact" method="POST">
+                            <input name="_subject" type="hidden" value="Website inquiry — Alex Hary"/>
                             <div class="row">
-                                <input required name="name" placeholder="Your name">
-                                <input required type="email" name="email" placeholder="Email">
+                                <input name="name" placeholder="Your name" required=""/>
+                                <input name="email" placeholder="Email" required="" type="email"/>
                             </div>
                             <div class="row">
-                                <input name="company" placeholder="Company (optional)">
-                                <input name="phone" placeholder="Phone (optional)">
+                                <input name="company" placeholder="Company (optional)"/>
+                                <input name="phone" placeholder="Phone (optional)"/>
                             </div>
-                            <textarea required name="message" rows="6" placeholder="Project description…"></textarea>
-                            <button type="submit" class="cta">Send message →</button>
+                            <textarea name="message" placeholder="Project description…" required="" rows="6"></textarea>
+                            <button class="cta" type="submit">Send message →</button>
                         </form>
                     </div>
                 </section>
             </div>
         </main>
-        <div id="project-overlay" class="overlay" hidden aria-modal="true" role="dialog" aria-labelledby="ov-title">
-            <button class="overlay__close" aria-label="Close project">×</button>
+        <div aria-labelledby="ov-title" aria-modal="true" class="overlay" hidden="" id="project-overlay" role="dialog">
+            <button aria-label="Close project" class="overlay__close">×</button>
             <div class="overlay__inner">
                 <div class="overlay__media">
-                    <button class="ov-nav ov-prev" aria-label="Previous media">‹</button>
+                    <button aria-label="Previous media" class="ov-nav ov-prev">‹</button>
                     <div class="ov-stage" id="ov-stage"></div>
-                    <button class="ov-nav ov-next" aria-label="Next media">›</button>
+                    <button aria-label="Next media" class="ov-nav ov-next">›</button>
+                </div>
+                <div class="overlay__meta">
+                    <h3 id="ov-title">3D Prints</h3>
+                    <p id="ov-desc">Description  </p>
+                </div>
+            </div>
+            <div class="overlay__inner">
+                <div class="overlay__media">
+                    <button aria-label="Previous media" class="ov-nav ov-prev">‹</button>
+                    <div class="ov-stage" id="ov-stage"></div>
+                    <button aria-label="Next media" class="ov-nav ov-next">›</button>
+                </div>
+                <div class="overlay__meta">
+                    <h3 id="ov-title">Title</h3>
+                    <p id="ov-desc">Description</p>
+                </div>
+            </div>
+            <div class="overlay__inner">
+                <div class="overlay__media">
+                    <button aria-label="Previous media" class="ov-nav ov-prev">‹</button>
+                    <div class="ov-stage" id="ov-stage"></div>
+                    <button aria-label="Next media" class="ov-nav ov-next">›</button>
+                </div>
+                <div class="overlay__meta">
+                    <h3 id="ov-title">Title</h3>
+                    <p id="ov-desc">Description</p>
+                </div>
+            </div>
+            <div class="overlay__inner">
+                <div class="overlay__media">
+                    <button aria-label="Previous media" class="ov-nav ov-prev">‹</button>
+                    <div class="ov-stage" id="ov-stage"></div>
+                    <button aria-label="Next media" class="ov-nav ov-next">›</button>
                 </div>
                 <div class="overlay__meta">
                     <h3 id="ov-title">Title</h3>
@@ -172,6 +220,269 @@
                 </div>
             </div>
         </div>
+        <!-- PROJECT LIGHTBOX CONTENT (HTML-driven) -->
+        <template id="tpl-art-signature">
+            <h2 class="ov-h">Art Design Objects</h2>
+            <div class="ov-text">
+                <p>
+      A single focal piece for a key point in the space — lobby, reception, private interiors or hospitality.
+      Developed for the site: scale, proportion, materiality and placement. </p>
+                <p>
+      Aligned with the architecture and the project’s concept, from hand-modeled to 3D-designed pieces.
+      Ideal for halls, open spaces, offices and presentation areas — statement corners, entry moments and hero zones. </p>
+                <p> <strong>Materials:</strong> ceramics/porcelain, 3D-printed masters, resins/composites, bronze casting via partners. </p>
+                <p> <strong>Process:</strong> concept + mockups + production + delivery. </p>
+                <p><a href="#contact">Request a brief</a></p>
+            </div>
+            <div class="ov-media">
+                <img alt="Signature Object — example" src="assets/Art_AlexHary_Sentada.jpg"/>
+                <img alt="Signature Object — example" src="assets/Art_AlexHary_Snake.jpg"/>
+                <img alt="Signature Object — example" src="assets/Art_AlexHary_Rose.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-art-series">
+            <h2 class="ov-h">Small Series</h2>
+            <div class="ov-text">
+                <p>A cohesive family of objects designed for the same application — shared style, dimensions and material language, with controlled variation across pieces.<p>Applications
+Decor objects distributed across the space (shelves, niches, tables), sets for hospitality and offices, gift / “trophy” pieces, and branded objects for launches, events or client gifting.</p><p>Production
+Typically fabricated through mould-based processes to ensure consistency and reliable quantities (with hand-finishing and glazing as needed).</p><p>Materials
+Ceramic and porcelain bodies, resins/composites, and 3D prints (as final pieces or masters for moulds).</p> <p><a href="#contact">Request a brief</a></p>  
+            </div>
+            <div class="ov-media">
+                <img alt="Small Series — example" src="assets/art-3.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-art-materials">
+            <h2 class="ov-h">Materials</h2>
+            <div class="ov-text">
+                <p>
+      Materials are part of the story: texture, weight and the way light touches the surface.
+      I work between hand-made processes and 3D design to bring the idea into a clean, reliable final piece. </p>
+                <p> <strong>Ceramics / Porcelain</strong><br>
+      A noble, warm and durable material — natural textures or author glazes. Hand-built one-offs or mould-based series,
+  suitable for interior (and selected exterior finishes). Thin porcelain can softly diffuse light. </p>
+                <p> <strong>3D Prints</strong><br>
+      3D design and printing of art objects and spatial elements — for complex parametric forms, rapid prototyping,
+  finished prints, and light elements (lamps, diffusers and custom parts). </p>
+                <p> <strong>Resins / Composites</strong><br>
+      Eco-friendly resins for lightweight, durable parts and complex shapes with raw textures,
+  painted or patinated finishes. </p>
+                <p> <strong>Bronze (via partners)</strong><br>
+      Available for selected pieces when the project requires permanence and specific patina finishes. </p>
+                <p><a href="#contact">Request a brief</a></p>
+            </div>
+            <div class="ov-media">
+                <img alt="Materials — example image 1" src="assets/Art_AlexHary_RedDragon_1.jpg"/>
+                <img alt="Materials — example image 2" src="assets/Art_AlexHary_Rose_1.jpg"/>
+                <img alt="Materials — example image 3" src="assets/Art_AlexHary_Eggs-of-the-god-1.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-art-p3">
+            <h2 class="ov-h">3D Prints</h2>
+            <div class="ov-text">
+                <p>
+      3D design and printing of <strong>art objects and spatial design</strong> —
+      sculptures, decor pieces and light elements with precise geometry and controlled variation. </p>
+                <p> <strong>Applications:</strong> sculptural objects, modular decor, lamp bodies and diffusers, and architectural details — from one-off statements to small series. </p>
+                <p> <strong>Workflow:</strong> rapid prototyping to lock scale and proportions, then either finished printed pieces
+      (coating/paint/patina) or <strong>master models for moulds</strong> for ceramic/resin/composite pieces. </p>
+                <p style="margin-top:14px;"> <a class="chip chip--cta" href="#contact">Request a brief</a> </p>
+            </div>
+            <div class="ov-media">
+                <img alt="3D Prints — example image 1" src="assets/Art_AlexHary_RedDragon_1.jpg"/>
+                <img alt="3D Prints — example image 2" src="assets/Art_AlexHary_Rose_1.jpg"/>
+                <img alt="3D Prints — example image 3" src="assets/Art_AlexHary_Eggs-of-the-god-1.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-art-p4">
+            <h2 class="ov-h">ART P4</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (materials, size, year, context).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="ART P4 — image 1" src="assets/art-2.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-art-p5">
+            <h2 class="ov-h">ART P5</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (materials, size, year, context).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="ART P5 — image 1" src="assets/art-3.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-art-p6">
+            <h2 class="ov-h">ART P6</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (materials, size, year, context).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="ART P6 — image 1" src="assets/art-5.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-art-p7">
+            <h2 class="ov-h">ART P7</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (materials, size, year, context).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="ART P7 — image 1" src="assets/art-2.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-art-p8">
+            <h2 class="ov-h">ART P8</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (materials, size, year, context).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="ART P8 — image 1" src="assets/art-3.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-design-p1">
+            <h2 class="ov-h">DESIGN P1</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (scope, role, tools, deliverables).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="DESIGN P1 — image 1" src="assets/design-1.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-design-p2">
+            <h2 class="ov-h">DESIGN P2</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (scope, role, tools, deliverables).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="DESIGN P2 — image 1" src="assets/design-2.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-design-p3">
+            <h2 class="ov-h">DESIGN P3</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (scope, role, tools, deliverables).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="DESIGN P3 — image 1" src="assets/design-3.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-design-p4">
+            <h2 class="ov-h">DESIGN P4</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (scope, role, tools, deliverables).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="DESIGN P4 — image 1" src="assets/design-1.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-design-p5">
+            <h2 class="ov-h">DESIGN P5</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (scope, role, tools, deliverables).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="DESIGN P5 — image 1" src="assets/design-2.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-design-p6">
+            <h2 class="ov-h">DESIGN P6</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (scope, role, tools, deliverables).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="DESIGN P6 — image 1" src="assets/design-3.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-design-p7">
+            <h2 class="ov-h">DESIGN P7</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (scope, role, tools, deliverables).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="DESIGN P7 — image 1" src="assets/design-1.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-design-p8">
+            <h2 class="ov-h">DESIGN P8</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (scope, role, tools, deliverables).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="DESIGN P8 — image 1" src="assets/design-2.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-code-p1">
+            <h2 class="ov-h">CODE P1</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (tech stack, goal, key features).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="CODE P1 — image 1" src="assets/design-3.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-code-p2">
+            <h2 class="ov-h">CODE P2</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (tech stack, goal, key features).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="CODE P2 — image 1" src="assets/art-5.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-code-p3">
+            <h2 class="ov-h">CODE P3</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (tech stack, goal, key features).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="CODE P3 — image 1" src="assets/design-3.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-code-p4">
+            <h2 class="ov-h">CODE P4</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (tech stack, goal, key features).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="CODE P4 — image 1" src="assets/art-5.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-code-p5">
+            <h2 class="ov-h">CODE P5</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (tech stack, goal, key features).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="CODE P5 — image 1" src="assets/design-3.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-code-p6">
+            <h2 class="ov-h">CODE P6</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (tech stack, goal, key features).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="CODE P6 — image 1" src="assets/art-5.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-code-p7">
+            <h2 class="ov-h">CODE P7</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (tech stack, goal, key features).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="CODE P7 — image 1" src="assets/design-3.jpg"/>
+            </div>
+        </template>
+        <template id="tpl-code-p8">
+            <h2 class="ov-h">CODE P8</h2>
+            <div class="ov-text">
+                <p>Replace this text with the project description (tech stack, goal, key features).</p>
+            </div>
+            <div class="ov-media">
+                <img alt="CODE P8 — image 1" src="assets/art-5.jpg"/>
+            </div>
+        </template>
         <script src="app.js"></script>
         <script src="particles.js"></script>
     </body>

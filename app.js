@@ -22,6 +22,29 @@ const PROJECTS = {
           p5:{title:"C5",desc:""}, p6:{title:"C6",desc:""}, p7:{title:"C7",desc:""}, p8:{title:"C8",desc:""} }
 };
 
+/* --- Background gallery: auto-adjust timing for any number of slides --- */
+function initBgSlides(){
+  $$(".bg__slides").forEach(slides=>{
+    const items = $$(".bg__slide", slides);
+    const n = items.length;
+    if (n <= 0) return;
+
+    // If only one slide, keep it visible (no fade loop)
+    if (n === 1){
+      items[0].style.animation = "none";
+      items[0].style.opacity = "1";
+      return;
+    }
+
+    const step = 6;            // seconds per slide (matches original rhythm)
+    const duration = n * step; // total cycle duration
+    items.forEach((el, i)=>{
+      el.style.animationDuration = `${duration}s`;
+      el.style.animationDelay = `${i * step}s`;
+    });
+  });
+}
+
 /* --- Init from hash --- */
 function indexFromHash(){
   const hash = window.location.hash.replace('#','').split('/')[0];
@@ -123,15 +146,78 @@ const btnClose = $(".overlay__close");
 const btnPrev  = $(".ov-prev");
 const btnNext  = $(".ov-next");
 
-let current = { section:null, id:null, mediaIndex:0 };
+let current = { section:null, id:null, mediaIndex:0, media:[] };
+
+function tplId(section, id){ return `tpl-${section}-${id}`; }
+
+function loadProjectFromHTML(section, id){
+  const tpl = document.getElementById(tplId(section, id));
+  if (!tpl) return { title: "", descHtml: "", media: [] };
+
+  // clone the template content so we never mutate the original
+  const frag = tpl.content.cloneNode(true);
+
+  const h = frag.querySelector(".ov-h");
+  const text = frag.querySelector(".ov-text");
+  const mediaWrap = frag.querySelector(".ov-media");
+
+  const media = [];
+  if (mediaWrap){
+    Array.from(mediaWrap.children).forEach(node=>{
+      // keep only elements (img/video/picture/etc.)
+      if (node.nodeType === 1) media.push(node);
+    });
+  }
+
+  return {
+    title: h ? h.textContent.trim() : "",
+    descHtml: text ? text.innerHTML : "",
+    media
+  };
+}
+
+function renderMedia(){
+  ovStage.innerHTML = "";
+
+  if (!current.media || current.media.length === 0){
+    // Graceful empty state
+    const empty = document.createElement("div");
+    empty.className = "ov-empty";
+    empty.textContent = "No media yet.";
+    ovStage.appendChild(empty);
+    btnPrev.disabled = true;
+    btnNext.disabled = true;
+    return;
+  }
+
+  current.mediaIndex = (current.mediaIndex + current.media.length) % current.media.length;
+  const node = current.media[current.mediaIndex].cloneNode(true);
+
+  // Ensure videos are usable
+  if (node.tagName === "VIDEO"){
+    node.controls = true;
+    node.playsInline = true;
+  }
+
+  ovStage.appendChild(node);
+
+  btnPrev.disabled = current.media.length < 2;
+  btnNext.disabled = current.media.length < 2;
+}
 
 function openProject(section, id, fromHash=false){
-  current = { section, id, mediaIndex:0 };
-  ovTitle.textContent = (PROJECTS[section] && PROJECTS[section][id] && PROJECTS[section][id].title) || 'Project';
-  ovDesc.textContent  = (PROJECTS[section] && PROJECTS[section][id] && PROJECTS[section][id].desc) || '';
-  ovStage.innerHTML = "";
+  const data = loadProjectFromHTML(section, id);
+
+  current = { section, id, mediaIndex:0, media: data.media };
+
+  ovTitle.textContent = data.title || "Project";
+  ovDesc.innerHTML = data.descHtml || "";
+
   overlay.hidden = false;
   document.body.style.overflow = "hidden";
+
+  renderMedia();
+
   if (!fromHash){
     history.pushState(null, "", `#${section}/${id}`);
   }
@@ -139,16 +225,34 @@ function openProject(section, id, fromHash=false){
 
 function closeProject(){
   overlay.hidden = true;
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = "";
   const secHash = ['art','design','code','contact'][index] || 'art';
   history.pushState(null, "", `#${secHash}`);
 }
 
 btnClose.addEventListener("click", closeProject);
-window.addEventListener("keydown", (e)=>{ if (!overlay.hidden && e.key === "Escape") closeProject(); });
+
+btnPrev.addEventListener("click", ()=>{
+  if (overlay.hidden) return;
+  current.mediaIndex -= 1;
+  renderMedia();
+});
+
+btnNext.addEventListener("click", ()=>{
+  if (overlay.hidden) return;
+  current.mediaIndex += 1;
+  renderMedia();
+});
+
+window.addEventListener("keydown", (e)=>{
+  if (overlay.hidden) return;
+  if (e.key === "Escape") closeProject();
+  if (e.key === "ArrowLeft") { current.mediaIndex -= 1; renderMedia(); }
+  if (e.key === "ArrowRight"){ current.mediaIndex += 1; renderMedia(); }
+});
 
 /* Click on tiles */
-$$(".tile").forEach(t=>{
+$$(".tile, .chip[data-section][data-id]").forEach(t=>{
   t.addEventListener("click", (e)=>{
     e.preventDefault();
     const section = t.dataset.section;
@@ -174,6 +278,7 @@ window.addEventListener("hashchange", parseHash);
 
 /* --- Initialize positions and active state --- */
 window.addEventListener('load', ()=>{
+  initBgSlides();
   window.scrollTo(0, 0); // avoid centering on mobile
   index = indexFromHash();
   goTo(index, {animate:false});
